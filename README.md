@@ -1,6 +1,10 @@
+
 # Amazon-GC
 > API client for using [Amazon Incentives API](https://developer.amazon.com/apps-and-games/incentives-api)
 to [create gift cards on demand](http://s3.amazonaws.com/AGCOD/tech_spec/AGCODTechSpec_WC_Simplified_EN.pdf).
+
+A fork of @john9hoff's [amazon-gc](https://github.com/john9hoff/amazon-gc/releases/tag/v1.0.5).
+
 
 ## Install
 ```
