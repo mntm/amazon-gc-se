@@ -17,8 +17,9 @@ module.exports.validateInputJson = (json) => {
 
     const validator = Joi.object().keys(schema).unknown(true)
 
-    const { error } = Joi.validate(json, validator, { abortEarly: false })
-    if (error) {
-        throw new Error(`${error.name} - ${JSON.stringify(error.message)}`)
+    try {
+        Joi.assert(json, validator, { abortEarly: false })
+    }catch(error){
+        throw new Error(`[AMAZON-GC] - ${error.name} - ${JSON.stringify(error.message)}`)
     }
 }
