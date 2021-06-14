@@ -13,7 +13,7 @@ npm install amazon-gc
 
 ## Usage
 #### Create a gift card
-```
+```js
 const { createGiftCard } = require('amazon-gc-se')
 
 const request = {
@@ -35,7 +35,7 @@ runSample().catch(console.error)
 
 ```
 #### Regenerate gift card
-```
+```js
 const { createGiftCard } = require('amazon-gc-se')
 
 const request = {
