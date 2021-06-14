@@ -1,10 +1,10 @@
-const shortid = require('shortid')
+const nanoid = require("nanoid")
 
 const createGiftCardRequest = (request) => {
     const {partnerId, amount, currencyCode} = request
 
     return {
-        creationRequestId: `${partnerId}${shortid.generate()}`,
+        creationRequestId: `${partnerId}${nanoid()}`,
         partnerId,
         value: {
             amount,
