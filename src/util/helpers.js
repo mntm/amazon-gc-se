@@ -1,10 +1,10 @@
 const nanoid = require("nanoid")
 
 const createGiftCardRequest = (request) => {
-    const {partnerId, amount, currencyCode} = request
+    const {partnerId, amount, currencyCode, creationRequestId} = request
 
     return {
-        creationRequestId: `${partnerId}${nanoid()}`,
+        creationRequestId: creationRequestId || `${partnerId}${nanoid()}`,
         partnerId,
         value: {
             amount,
