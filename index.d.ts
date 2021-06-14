@@ -78,7 +78,10 @@ export interface OperationParameters {
 
 export interface CreateGiftCardRequest
   extends GiftCardValue,
-    OperationParameters {}
+    OperationParameters {
+  creationRequestId?: string;
+}
+
 export interface OperationResponse {
   status: OperationStatus;
 }

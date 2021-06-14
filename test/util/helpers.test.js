@@ -14,6 +14,20 @@ test('createGiftCardRequest', () => {
     expect(result.value.amount).toBe(20)
 })
 
+test('createGiftCardRequest with creationRequestId passed as parameter', () => {
+    const request = {
+        amount: 20,
+        currencyCode: 'USD',
+        partnerId: 'testPartnerId',
+        creationRequestId: 'Some_Request_ID',
+    }
+    const result = createGiftCardRequest(request)
+    expect(result.creationRequestId).toBe('Some_Request_ID')
+    expect(result.partnerId).toBe('testPartnerId')
+    expect(result.value.currencyCode).toBe('USD')
+    expect(result.value.amount).toBe(20)
+})
+
 describe('getEndpoint', () => {
     endpoints.forEach((endpoint) => {
         const { location, environment } = endpoint
