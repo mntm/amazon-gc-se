@@ -7,7 +7,8 @@ const schema = {
     accessKey: Joi.string().required(),
     secretKey: Joi.string().required(),
     environment: Joi.string().valid('sandbox', 'production').required(),
-    endpoint: Joi.string().valid('NA', 'EU', 'FE').required()
+    endpoint: Joi.string().valid('NA', 'EU', 'FE').required(),
+    creationRequestId: Joi.string(),
 }
 
 module.exports.validateInputJson = (json) => {
