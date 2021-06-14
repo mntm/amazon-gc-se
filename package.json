@@ -1,0 +1,39 @@
+{
+  "name": "amazon-gc",
+  "version": "1.0.5",
+  "description": "Connect to Amazon incentives API to create gift cards",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john9hoff/amazon-gc.git"
+  },
+  "keywords": [
+    "aws",
+    "amazon",
+    "gift",
+    "card",
+    "code",
+    "agcod"
+  ],
+  "author": "John Hoff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john9hoff/amazon-gc/issues"
+  },
+  "homepage": "https://github.com/john9hoff/amazon-gc#readme",
+  "devDependencies": {
+    "np": "^5.1.0",
+    "jest": "^24.9.0",
+    "@types/jest": "^24.0.18"
+  },
+  "dependencies": {
+    "aws4": "^1.8.0",
+    "axios": "^0.19.0",
+    "joi": "^14.3.1",
+    "shortid": "^2.2.15",
+    "uuid": "^3.3.3"
+  }
+}
