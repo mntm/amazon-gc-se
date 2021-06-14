@@ -12,8 +12,9 @@ npm install amazon-gc
 ```
 
 ## Usage
+#### Create a gift card
 ```
-const { createGiftCard } = require('amazon-gc')
+const { createGiftCard } = require('amazon-gc-se')
 
 const request = {
     amount: 20,
@@ -33,6 +34,36 @@ async function runSample() {
 runSample().catch(console.error)
 
 ```
+#### Regenerate gift card
+```
+const { createGiftCard } = require('amazon-gc-se')
+
+const request = {
+    amount: 20,
+    currencyCode: 'USD',
+    partnerId: 'yourPartnerId',
+    accessKey: 'yourAccessKey',
+    secretKey: 'yourSecretKey',
+    environment: 'sandbox',
+    endpoint: 'NA',
+    creationRequestId: 'previouslyGeneratedCreationRequestId',
+}
+
+async function runSample() {
+    const res = await createGiftCard(request);
+    console.log(`Amazon gift card is ${JSON.stringify(res)}`)
+}
+
+runSample().catch(console.error)
+
+```
+
+## Changes
+- Added type declaration
+- Removed unused dependencies
+- Updated every dependencies
+- Replaced [@dylang/shortid](https://www.npmjs.com/package/shortid) with [@ai/nanoid](https://www.npmjs.com/package/nanoid)
+- Regenerate coupons by passing creationRequestId to createGiftCard
 
 ## Other clients
 - https://www.npmjs.com/package/agcod
