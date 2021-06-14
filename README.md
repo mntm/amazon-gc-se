@@ -38,4 +38,5 @@ runSample().catch(console.error)
 - https://www.npmjs.com/package/agcod
 
 ## Problems
-* If you find an issue or bug, please [file it on GitHub](https://github.com/john9hoff/amazon-gc/issues).
+* If you find an issue or bug, please [file it on GitHub](https://github.com/mntm/amazon-gc-se/issues).
+
