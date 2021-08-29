@@ -1,4 +1,10 @@
-type Operation = "CreateGiftCard" | "CancelGiftCard" | "ActivateGiftCard" | "DeactivateGiftCard" | "ActivationStatusCheck" | "GetAvailablefunds"
+type Operation =
+  | "CreateGiftCard"
+  | "CancelGiftCard"
+  | "ActivateGiftCard"
+  | "DeactivateGiftCard"
+  | "ActivationStatusCheck"
+  | "GetAvailablefunds";
 type OperationStatus = "SUCCESS" | "FAILURE" | "RESEND";
 type GiftCardStatus = "Fulfilled" | "RefundedToPurchaser" | "Expired";
 type OperationErrorCode = "F100" | "F200" | "F300" | "F400" | "F500";
@@ -63,7 +69,7 @@ type OperationErrorType =
   | "WrongActivationRequestId"
   | "WrongGcOrderSource"
   | "WrongGcOrderType";
-  
+
 export function createGiftCard(
   request: CreateGiftCardRequest
 ): Promise<CreateGiftCardResponse>;
