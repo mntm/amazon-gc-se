@@ -9,6 +9,7 @@ test('createGiftCardRequest', () => {
     }
     const result = createGiftCardRequest(request)
     expect(result.creationRequestId).toBeDefined()
+    expect(result.creationRequestId).toMatch(new RegExp(`^testPartnerId.*$`));
     expect(result.partnerId).toBe('testPartnerId')
     expect(result.value.currencyCode).toBe('USD')
     expect(result.value.amount).toBe(20)
@@ -22,7 +23,21 @@ test('createGiftCardRequest with creationRequestId passed as parameter', () => {
         creationRequestId: 'Some_Request_ID',
     }
     const result = createGiftCardRequest(request)
-    expect(result.creationRequestId).toBe('Some_Request_ID')
+    expect(result.creationRequestId).toBe('testPartnerIdSome_Request_ID')
+    expect(result.partnerId).toBe('testPartnerId')
+    expect(result.value.currencyCode).toBe('USD')
+    expect(result.value.amount).toBe(20)
+})
+
+test('createGiftCardRequest with creationRequestId that begins with partnerId passed as parameter', () => {
+    const request = {
+        amount: 20,
+        currencyCode: 'USD',
+        partnerId: 'testPartnerId',
+        creationRequestId: 'testPartnerIdSome_Request_ID',
+    }
+    const result = createGiftCardRequest(request)
+    expect(result.creationRequestId).toBe('testPartnerIdSome_Request_ID')
     expect(result.partnerId).toBe('testPartnerId')
     expect(result.value.currencyCode).toBe('USD')
     expect(result.value.amount).toBe(20)
