@@ -1,4 +1,4 @@
-const nanoid = require("nanoid");
+const { nanoid } = require("nanoid");
 
 const createGiftCardRequest = (request) => {
   const { partnerId, amount, currencyCode, creationRequestId } = request;
