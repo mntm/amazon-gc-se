@@ -8,7 +8,7 @@ A fork of @john9hoff's [amazon-gc](https://github.com/john9hoff/amazon-gc/releas
 
 ## Install
 ```
-npm install --save mntm/amazon-gc-se
+npm install --save amazon-gc-se
 ```
 
 ## Usage
